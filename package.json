@@ -1,6 +1,6 @@
 {
-  "name": "vueble",
-  "version": "0.0.1",
+  "name": "@ersolucoesweb/vueble",
+  "version": "0.0.2",
   "description": "Criador de tabelas baseado em objetos para VueJS",
   "main": "index.js",
   "module": "dist/vueble.esm.js",
@@ -19,10 +19,11 @@
     "lint": "vue-cli-service lint",
     "precommit": "git add .",
     "commit": "git commit -m",
+    "auth": "",
     "postcommit": "git push",
-    "publish:patch": "npm run build && git add . && git commit -m $(npm version patch --no-git-tag-version --force) && git push -u origin master && npm publish",
-    "publish:minor": "npm run build && git add . && git commit -m $(npm version minor --no-git-tag-version --force) && git push -u origin master && npm publish",
-    "publish:major": "npm run build && git add . && git commit -m $(npm version major --no-git-tag-version --force) && git push -u origin master && npm publish"
+    "publish:patch": "npm run build && git add . && git commit -m $(npm version patch --no-git-tag-version --force) && git push -u origin master && npm publish --access public",
+    "publish:minor": "npm run build && git add . && git commit -m $(npm version minor --no-git-tag-version --force) && git push -u origin master && npm publish --access public",
+    "publish:major": "npm run build && git add . && git commit -m $(npm version major --no-git-tag-version --force) && git push -u origin master && npm publish --access public"
   },
   "repository": {
     "type": "git",
