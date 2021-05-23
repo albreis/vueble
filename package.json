@@ -1,6 +1,6 @@
 {
   "name": "@ersolucoesweb/vueble",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "private": false,
   "description": "Criador de tabelas baseado em objetos para VueJS",
   "main": "index.js",
@@ -22,9 +22,9 @@
     "commit": "git commit -m",
     "auth": "",
     "postcommit": "git push",
-    "publish:patch": "npm run build && git add . && git commit -m $(npm version patch --no-git-tag-version --force) && git push -u origin master && npm publish --access=public",
-    "publish:minor": "npm run build && git add . && git commit -m $(npm version minor --no-git-tag-version --force) && git push -u origin master && npm publish --access=public",
-    "publish:major": "npm run build && git add . && git commit -m $(npm version major --no-git-tag-version --force) && git push -u origin master && npm publish --access=public"
+    "publish:patch": "npm run build && git add . && git commit -m $(npm version patch --no-git-tag-version --force) && git push -u origin master && npm login && npm publish --access=public",
+    "publish:minor": "npm run build && git add . && git commit -m $(npm version minor --no-git-tag-version --force) && git push -u origin master && npm login && npm publish --access=public",
+    "publish:major": "npm run build && git add . && git commit -m $(npm version major --no-git-tag-version --force) && git push -u origin master && npm login && npm publish --access=public"
   },
   "repository": {
     "type": "git",

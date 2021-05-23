@@ -1,19 +1,19 @@
 <template>
     <div class="table-builder">
-        <table v-if="table" v-bind="parse(table.attrs, table)" v-on="parse(table.events, table)">
-            <thead v-if="table.header" v-bind="parse(table.header.attrs, table)" v-on="parse(table.header.events, table)">
-                <tr v-for="(row, i) in parse(table.header.rows, table)" :key="`thead-tr-${i}`" v-bind="parse(row.attrs, table, row)" v-on="parse(row.events, table, row)">
-                    <th v-for="(col, i) in parse(row.cols, table, row)" v-html="col.label" :key="`thead-tr-th-${i}`" v-bind="parse(col.attrs, table, row, col)" v-on="parse(col.events, table, row, col)"></th>
+        <table v-if="table" v-bind="parse(table.attrs, {table, model})" v-on="parse(table.events, {table, model})">
+            <thead v-if="table.header" v-bind="parse(table.header.attrs, {table, model})" v-on="parse(table.header.events, {table, model})">
+                <tr v-for="(row, i) in parse(table.header.rows, {table, model})" :key="`thead-tr-${i}`" v-bind="parse(row.attrs, {table, row, model})" v-on="parse(row.events, {table, row, model})">
+                    <th v-for="(col, i) in parse(row.cols, {table, row, model})" v-html="col.label" :key="`thead-tr-th-${i}`" v-bind="parse(col.attrs, {table, row, col, model})" v-on="parse(col.events, {table, row, col, model})"></th>
                 </tr>
             </thead>
-            <tbody v-if="table.body" v-bind="parse(table.body.attrs, table)" v-on="parse(table.body.events, table)">
-                <tr v-for="(row, i) in parse(table.body.rows, table)" :key="`thead-tr-${i}`" v-bind="parse(row.attrs, table, row)" v-on="parse(row.events, table, row)">
-                    <td v-for="(col, i) in parse(row.cols, table, row)" v-html="col.label" :key="`tbody-tr-td-${i}`" v-bind="parse(col.attrs, table, row, col)" v-on="parse(col.events, table, row, col)"></td>
+            <tbody v-if="table.body" v-bind="parse(table.body.attrs, {table, model})" v-on="parse(table.body.events, {table, model})">
+                <tr v-for="(row, i) in parse(table.body.rows, {table, model})" :key="`thead-tr-${i}`" v-bind="parse(row.attrs, {table, row, model})" v-on="parse(row.events, {table, row, model})">
+                    <td v-for="(col, i) in parse(row.cols, {table, row, model})" v-html="col.label" :key="`tbody-tr-td-${i}`" v-bind="parse(col.attrs, {table, row, col, model})" v-on="parse(col.events, {table, row, col, model})"></td>
                 </tr>
             </tbody>
-            <tfoot v-if="table.footer" v-bind="parse(table.footer.attrs, table)" v-on="parse(table.footer.events, table)">
-                <tr v-for="(row, i) in parse(table.footer.rows, table)" :key="`tfoot-tr-${i}`" v-bind="parse(row.attrs, table, row)" v-on="parse(row.events, table, row)">
-                    <td v-for="(col, i) in parse(row.cols, table, row)" v-html="col.label" :key="`tfoot-tr-td-${i}`" v-bind="parse(col.attrs, table, row, col)" v-on="parse(col.events, table, row, col)"></td>
+            <tfoot v-if="table.footer" v-bind="parse(table.footer.attrs, {table, model})" v-on="parse(table.footer.events, {table, model})">
+                <tr v-for="(row, i) in parse(table.footer.rows, {table, model})" :key="`tfoot-tr-${i}`" v-bind="parse(row.attrs, {table, row, model})" v-on="parse(row.events, {table, row, model})">
+                    <td v-for="(col, i) in parse(row.cols, {table, row, model})" v-html="col.label" :key="`tfoot-tr-td-${i}`" v-bind="parse(col.attrs, {table, row, col, model})" v-on="parse(col.events, {table, row, col, model})"></td>
                 </tr>
             </tfoot>
         </table>
@@ -26,13 +26,9 @@ export default {
         table: {}            
     },
     methods: {
-        parse(...params) {
-            var input = params[0]
-            var table = params[1] || null
-            var row = params[2] || null
-            var col = params[3] || null
+        parse(input, params) {
             if(typeof input == 'function') {
-                return input(table, row, col)
+                return input(params)
             }
             return input
         }
