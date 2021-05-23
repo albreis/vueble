@@ -1,6 +1,7 @@
 {
   "name": "@ersolucoesweb/vueble",
-  "version": "2.0.0",
+  "version": "3.0.0",
+  "private": false,
   "description": "Criador de tabelas baseado em objetos para VueJS",
   "main": "index.js",
   "module": "dist/vueble.esm.js",
@@ -21,9 +22,9 @@
     "commit": "git commit -m",
     "auth": "",
     "postcommit": "git push",
-    "publish:patch": "npm run build && git add . && git commit -m $(npm version patch --no-git-tag-version --force) && git push -u origin master && npm publish --access public",
-    "publish:minor": "npm run build && git add . && git commit -m $(npm version minor --no-git-tag-version --force) && git push -u origin master && npm publish --access public",
-    "publish:major": "npm run build && git add . && git commit -m $(npm version major --no-git-tag-version --force) && git push -u origin master && npm publish --access public"
+    "publish:patch": "npm run build && git add . && git commit -m $(npm version patch --no-git-tag-version --force) && git push -u origin master && npm publish --access=public",
+    "publish:minor": "npm run build && git add . && git commit -m $(npm version minor --no-git-tag-version --force) && git push -u origin master && npm publish --access=public",
+    "publish:major": "npm run build && git add . && git commit -m $(npm version major --no-git-tag-version --force) && git push -u origin master && npm publish --access=public"
   },
   "repository": {
     "type": "git",
@@ -31,10 +32,14 @@
   },
   "keywords": [
     "vuejs",
-    "form",
+    "table",
     "builder"
   ],
   "author": "ER Soluções Web LTDA <contato@ersolucoesweb.com.br>",
+  "contributors": [
+    {"name": "Albreis - Design & Programação", "email": "contato@albreis.com.br", "url": "https://albreis.com.br"},
+    {"name": "Everaldo Programador", "email": "contato@everaldoreis.com.br", "url": "https://everaldoreis.com.br"}
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/albreis/vueble/issues"
