@@ -1,6 +1,6 @@
 {
   "name": "@ersolucoesweb/vueble",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": false,
   "description": "Criador de tabelas baseado em objetos para VueJS",
   "main": "index.js",
@@ -37,8 +37,16 @@
   ],
   "author": "ER Soluções Web LTDA <contato@ersolucoesweb.com.br>",
   "contributors": [
-    {"name": "Albreis - Design & Programação", "email": "contato@albreis.com.br", "url": "https://albreis.com.br"},
-    {"name": "Everaldo Programador", "email": "contato@everaldoreis.com.br", "url": "https://everaldoreis.com.br"}
+    {
+      "name": "Albreis - Design & Programação",
+      "email": "contato@albreis.com.br",
+      "url": "https://albreis.com.br"
+    },
+    {
+      "name": "Everaldo Programador",
+      "email": "contato@everaldoreis.com.br",
+      "url": "https://everaldoreis.com.br"
+    }
   ],
   "license": "MIT",
   "bugs": {
