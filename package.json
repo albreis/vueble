@@ -1,6 +1,6 @@
 {
   "name": "@ersolucoesweb/vueble",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Criador de tabelas baseado em objetos para VueJS",
   "main": "index.js",
   "module": "dist/vueble.esm.js",
