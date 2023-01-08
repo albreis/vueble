@@ -62,7 +62,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "postcss": "^8.2.15",
     "rollup": "^1.17.0",
-    "rollup-plugin-vue": "^5.0.1",
+    "rollup-plugin-vue": "^6.0.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue": "^2.6.10",
